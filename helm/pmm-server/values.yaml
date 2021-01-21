@@ -43,3 +43,5 @@ resources:
 service:
   type: LoadBalancer
   loadBalancerIP: ""
+
+affinity: {}

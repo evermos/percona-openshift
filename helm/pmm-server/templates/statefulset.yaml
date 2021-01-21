@@ -22,6 +22,10 @@ spec:
         app: {{ template "percona.fullname" . }}
         component: pmm
     spec:
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 -}}
+      {{- end }}
       securityContext:
         supplementalGroups: [1000]
 {{ if eq .Values.platform "kubernetes" }}
