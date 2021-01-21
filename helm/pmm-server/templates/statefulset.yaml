@@ -72,6 +72,9 @@ spec:
               value: {{ .Values.credentials.password | quote }}
 {{ end }}
 
+{{- with .Values.extraEnvs }}
+            {{ toYaml . | nindent 12 }}
+{{- end }}
           command: ["bash"]
           args:
             - "-c"

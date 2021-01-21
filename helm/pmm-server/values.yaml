@@ -45,3 +45,5 @@ service:
   loadBalancerIP: ""
 
 affinity: {}
+
+extraEnvs: {}
